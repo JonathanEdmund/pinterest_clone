@@ -5,6 +5,7 @@ dotenv.config();
 
 import express from "express";
 import mongoose from "mongoose";
+import cookieParser from "cookie-parser";
 
 import post from "./routes/post.js";
 import user from "./routes/user.js";
@@ -17,6 +18,7 @@ import user from "./routes/user.js";
 
 const app = express();
 app.use(express.json());
+app.use(cookieParser())
 
 //route
 app.use("/api/post", post);
