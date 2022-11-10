@@ -1,6 +1,10 @@
 import { useEffect, useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import Login from "../components/Login";
+
 const Homepage = () => {
   const [pins, setPins] = useState([]);
+  const entry = useSelector((state) => state.ui.entry);
 
   useEffect(() => {
     fetch("/api/post")
@@ -12,9 +16,11 @@ const Homepage = () => {
   return (
     <>
       <h1>Homepage</h1>
+      {entry?.login && <Login />}
+
       {pins.map((pin) => {
         // render pin component
-        return <p>{pin.link}</p>;
+        return <img key={pin._id} src={pin.link} alt={pin.title} />;
       })}
     </>
   );

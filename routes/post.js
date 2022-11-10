@@ -39,4 +39,18 @@ router
     }
   });
 
+router.route("/:pinId").get(async (req, res) => {
+  try {
+    const { pinId } = req.params;
+    const pin = await Image.findById(pinId);
+    if (!pin) {
+      throw new Error("Pin not found!");
+    }
+
+    res.json({ status: true, message: "Pin found!", pin });
+  } catch (error) {
+    res.json({ status: false, message: error.message });
+  }
+});
+
 export default router;
