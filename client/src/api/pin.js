@@ -1,4 +1,4 @@
-export const pin = async (input) => {
+const pin = async (input) => {
   const response = await fetch("/api/user/pin", {
     method: "POST",
     headers: {
@@ -8,3 +8,5 @@ export const pin = async (input) => {
   });
   return response.json();
 };
+
+export default pin;

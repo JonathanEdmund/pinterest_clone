@@ -1,4 +1,4 @@
-export const register = async (input) => {
+const register = async (input) => {
   const response = await fetch("/api/user/register", {
     method: "POST",
     headers: {
@@ -8,3 +8,5 @@ export const register = async (input) => {
   });
   return response.json();
 };
+
+export default register;
