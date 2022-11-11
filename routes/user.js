@@ -22,6 +22,9 @@ router.route("/register").post(async (req, res) => {
       throw new Error("Incomplete registration form!");
     }
 
+    const user = await User.findOne({ username: username });
+    if (user) throw new Error("Username already taken!");
+
     // encrypt password with bcrypt
     const hashedPassword = await bcrypt.hash(
       password,
