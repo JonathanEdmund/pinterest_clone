@@ -15,7 +15,7 @@ const Navbar = () => {
 
   return (
     <nav className="fixed flex items-center -mt-[11vh] h-[11vh] w-screen z-20 bg-white pb-2 sm:px-4 py-2.5">
-      <div className="flex w-full items-center h-full">
+      <div className="flex w-full items-center h-full justify-between">
         <div className="flex items-center ">
           <Link to="/">
             <ButtonCircle>
@@ -40,7 +40,7 @@ const Navbar = () => {
             />
           </div>
         )}
-        <div className="flex">
+        <div className="flex justify-self-end">
           {user ? (
             <>
               <ButtonCircle>b</ButtonCircle>
