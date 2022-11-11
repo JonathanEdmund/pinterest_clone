@@ -7,8 +7,8 @@ import ButtonLogin from "./ButtonLogin";
 import ButtonRegister from "./ButtonRegister";
 import ButtonCircle from "./ButtonCircle";
 
-import { ReactComponent as Logo } from "../img/pinterest-social-media-svgrepo-com.svg";
-import { ReactComponent as User } from "../img/user.svg";
+// import { ReactComponent as Logo } from "../img/pinterest-social-media-svgrepo-com.svg";
+// import { ReactComponent as User } from "../img/user.svg";
 
 const Navbar = () => {
   const user = useSelector((state) => state.auth.user);
@@ -18,9 +18,7 @@ const Navbar = () => {
       <div className="flex w-full items-center h-full justify-between">
         <div className="flex items-center ">
           <Link to="/">
-            <ButtonCircle>
-              <Logo />
-            </ButtonCircle>
+            <ButtonCircle>p</ButtonCircle>
           </Link>
           {/* <button>Home</button> */}
           {user && (
@@ -47,9 +45,7 @@ const Navbar = () => {
               <ButtonCircle>b</ButtonCircle>
               <ButtonCircle>b</ButtonCircle>
               <Link to={"adf"}>
-                <ButtonCircle>
-                  <User />
-                </ButtonCircle>
+                <ButtonCircle>user</ButtonCircle>
               </Link>
             </>
           ) : (
