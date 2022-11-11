@@ -5,6 +5,7 @@ import { useSelector } from "react-redux";
 import Pin from "../components/Pin";
 import Login from "../components/Entry/Login";
 import Register from "../components/Entry/Register";
+import Navbar from "../components/Navbar";
 
 const Homepage = () => {
   const [pins, setPins] = useState([]);
@@ -19,6 +20,7 @@ const Homepage = () => {
   }, []);
   return (
     <>
+      <Navbar />
       {entry?.login && <Login />}
       {entry?.register && <Register />}
 
