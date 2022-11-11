@@ -15,7 +15,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="flex justify-between bg-blue-100 px-2 sm:px-4 py-2.5 ">
+    <nav className="fixed -mt-[7vh] h-[7vh] w-[100vw] z-20 flex justify-between bg-blue-100 px-2 sm:px-4 py-2.5 ">
       {/* {login && <div className="w-[200px] h-[200px] fixed bg-white">abs</div>} */}
       <div>
         <Link to="/">p</Link>
