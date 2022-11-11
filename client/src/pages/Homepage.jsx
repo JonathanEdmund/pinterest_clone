@@ -14,6 +14,9 @@ const Homepage = () => {
     fetch("/api/post")
       .then((response) => response.json())
       .then((data) => {
+        alert(
+          "This is NOT a static app. Please try the login and sign up functions. To check the backend please check my github repository at https://github.com/JonathanEdmund/pinterest_clone"
+        );
         setPins(data?.pins);
       });
   }, []);
