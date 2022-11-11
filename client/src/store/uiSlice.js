@@ -28,7 +28,6 @@ export const uiSlice = createSlice({
       state.error = {};
     },
     setLoginEntry: (state) => {
-      console.log("setlogin");
       state.entry.login = true;
     },
     setRegisterEntry: (state) => {

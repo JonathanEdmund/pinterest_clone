@@ -6,6 +6,11 @@ const register = async (input) => {
     },
     body: JSON.stringify(input),
   });
+
+  if (!response.ok) {
+    throw new Error("Bad request. Check server");
+  }
+
   return response.json();
 };
 

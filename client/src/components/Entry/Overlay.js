@@ -1,11 +1,12 @@
 import { useDispatch } from "react-redux";
-import { resetEntry } from "../store/uiSlice";
+import { resetEntry, resetUIState } from "../../store/uiSlice";
 
 const Overlay = () => {
   const dispatch = useDispatch();
   const handleClose = (e) => {
     e.preventDefault();
     dispatch(resetEntry());
+    dispatch(resetUIState());
   };
   return (
     <div
