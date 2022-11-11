@@ -9,6 +9,7 @@ import {
 
 const initialState = {
   user: false,
+  username: "",
 };
 
 export const authSlice = createSlice({
@@ -18,8 +19,9 @@ export const authSlice = createSlice({
     setUserLogout: (state) => {
       state.user = false;
     },
-    setUserLogin: (state) => {
+    setUserLogin: (state, action) => {
       state.user = true;
+      state.username = action.payload;
     },
   },
 });
@@ -50,8 +52,7 @@ export const login = (input) => {
       console.log(result);
       if (result.status) {
         dispatch(setSuccess(result.message));
-
-        dispatch(setUserLogin());
+        dispatch(setUserLogin(result.username));
         dispatch(resetUIState());
         dispatch(resetEntry());
       } else {
@@ -88,8 +89,7 @@ export const register = (input) => {
       console.log(result);
       if (result.status) {
         dispatch(setSuccess(result.message));
-
-        dispatch(setUserLogin());
+        dispatch(setUserLogin(result.username));
         dispatch(resetUIState());
         dispatch(resetEntry());
       } else {

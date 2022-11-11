@@ -12,6 +12,7 @@ import { ReactComponent as User } from "../img/user.svg";
 
 const Navbar = () => {
   const user = useSelector((state) => state.auth.user);
+  const username = useSelector((state) => state.auth.username);
 
   return (
     <nav className="fixed flex items-center -mt-[11vh] h-[11vh] w-screen z-20 bg-white pb-2 sm:px-4 py-2.5">
@@ -46,7 +47,7 @@ const Navbar = () => {
               <ButtonCircle>b</ButtonCircle>
               <ButtonCircle>b</ButtonCircle>
               <ButtonCircle>b</ButtonCircle>
-              <Link to={"adf"}>
+              <Link to={`/user/${username}`}>
                 <ButtonCircle>
                   <User />
                 </ButtonCircle>

@@ -50,7 +50,7 @@ router.route("/register").post(async (req, res) => {
       message: "Successfully registered a new user!",
     });
   } catch (error) {
-    res.json({ status: false, message: error.message });
+    res.json({ status: false, message: error.message, username });
   }
 });
 
@@ -80,7 +80,7 @@ router.route("/login").post(async (req, res) => {
     );
 
     res.cookie("accessToken", accessToken, { httpOnly: true, maxAge: 900000 }); // 15 minutes
-    res.json({ status: true, message: "Successfully logged in!" });
+    res.json({ status: true, message: "Successfully logged in!", username });
   } catch (error) {
     res.json({ status: false, message: error.message });
   }
@@ -98,6 +98,19 @@ router.route("/pin").post(parseCookie, authenticateToken, async (req, res) => {
     if (!user) throw new Error("User not found!");
 
     res.json({ status: true, message: "Successfully pinned!" });
+  } catch (error) {
+    res.json({ status: false, message: error.message });
+  }
+});
+
+router.route("/:username/pins").get(async (req, res) => {
+  try {
+    const { username } = req.params;
+
+    const user = await User.findOne({ username });
+    if (!user) throw new Error("User not found!");
+
+    res.json({ status: true, message: "User pins found!", pins: user.pins });
   } catch (error) {
     res.json({ status: false, message: error.message });
   }
