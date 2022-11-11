@@ -25,7 +25,8 @@ const Pin = (props) => {
   };
 
   return (
-    <div className="w-[16%] mb-3 pb-3 rounded-lg">
+    // <div className="lg:w-[16%] md:w-[30%] mb-3 pb-3 rounded-lg">
+    <div className="mb-3 pb-3 rounded-lg">
       <div
         className="relative w-full"
         onMouseEnter={() => setIsShown(true)}
