@@ -15,7 +15,7 @@ const Homepage = () => {
       .then((response) => response.json())
       .then((data) => {
         alert(
-          "This is NOT a static app. Please try the login and sign up functions. To check the backend please check my github repository at https://github.com/JonathanEdmund/pinterest_clone"
+          "This is NOT a static app. Please try the login, sign up, pin functionalities. Also check your user page to see you collection of pins:). To check the server side please check my github repository at https://github.com/JonathanEdmund/pinterest_clone, thank you :D"
         );
         setPins(data?.pins);
       });
